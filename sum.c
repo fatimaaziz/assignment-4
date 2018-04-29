@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<pthread.h>
 
-void * sumofarr(Void*arg);
+void * sumofarr(void*arg);
 int array[1000];
 int start=0;
 int sum=0;
@@ -18,7 +18,7 @@ int main()
 	
 	for(int i=0;i<=9;i++)
 	{
-		pthread_create(&p ,NULL,sum,NULL);
+		pthread_create(&p ,NULL,sumofarr,NULL);
 		pthread_join(p,NULL);
 	}
 	printf("sum of ellement of 1000 element array,%d",sum)
